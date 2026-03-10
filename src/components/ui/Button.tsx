@@ -55,7 +55,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
   );
 
   if (href) {
-    return <a href={href} className={base}>{content}</a>;
+    return <a href={href} onClick={onClick} className={base}>{content}</a>;
   }
 
   return (
