@@ -1,7 +1,7 @@
 import H2 from '@/components/Typography/H2.tsx';
 import SectionLabel from '@/components/Typography/SectionLabel.tsx';
 import { motion } from 'framer-motion';
-import { AwardIcon, GlobeIcon, TrendingUpIcon, UsersIcon, ZapIcon } from 'lucide-react';
+import { AwardIcon, GlobeIcon, UsersIcon } from 'lucide-react';
 import type { FC, ReactNode } from 'react';
 
 type CardType = 'stat' | 'text' | 'feature';
@@ -37,15 +37,8 @@ const CARDS: Card[] = [
   },
   {
     type: 'text',
-    icon: <ZapIcon size={20} />,
-    text: 'Выстраивала HR-процессы в компаниях с нуля',
-  },
-  {
-    type: 'stat',
-    value: '100+',
-    label: 'тренингов',
-    detail: 'для команд до 30 человек, онлайн и офлайн',
-    accent: true,
+    icon: <GlobeIcon size={20} />,
+    text: 'Свободный английский — работаю с вакансиями и компаниями на международном рынке',
   },
   {
     type: 'feature',
@@ -57,20 +50,16 @@ const CARDS: Card[] = [
     detail: 'Знаю, как сделать профиль, который замечают нужные люди — и помогу вам его настроить',
   },
   {
-    type: 'text',
-    icon: <GlobeIcon size={20} />,
-    text: 'Свободный английский — работаю с вакансиями и компаниями на международном рынке',
+    type: 'stat',
+    value: '100+',
+    label: 'тренингов',
+    detail: 'для команд до 30 человек, онлайн и офлайн',
+    accent: true,
   },
   {
     type: 'text',
     icon: <UsersIcon size={20} />,
     text: 'Хорошо ориентируюсь в рынке труда: знаю, где искать и как выходить на компании напрямую',
-  },
-  {
-    type: 'feature',
-    icon: <TrendingUpIcon size={20} />,
-    text: 'Инициировала HR-изменения',
-    detail: 'Умею двигать процессы вперёд даже там, где «всегда делали вот так»',
   },
 ];
 
@@ -97,10 +86,10 @@ const CredentialCard: FC<Card> = ({ type, value, label, detail, text, icon, acce
 
   if (type === 'feature') {
     return (
-      <div className="relative overflow-hidden rounded-2xl bg-foreground p-6 grainy">
-        <p className="relative z-10 font-bold text-white text-lg leading-snug">{text}</p>
+      <div className="relative overflow-hidden rounded-2xl bg-primary-50 p-6 grainy">
+        <p className="relative z-10 font-bold text-foreground text-lg leading-snug">{text}</p>
         {detail && (
-          <p className="relative z-10 mt-2 text-sm text-white/55 leading-relaxed">{detail}</p>
+          <p className="relative z-10 mt-2 text-sm text-foreground/55 leading-relaxed">{detail}</p>
         )}
       </div>
     );

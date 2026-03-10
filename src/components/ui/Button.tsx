@@ -7,6 +7,7 @@ interface ButtonProps {
   className?: string;
   type?: 'button' | 'submit' | 'reset';
   variant?: 'primary' | 'secondary';
+  disabled?: boolean;
 }
 
 const VARIANTS = {
@@ -26,6 +27,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
   className,
   type = 'button',
   variant = 'primary',
+  disabled,
   children,
 }) => {
   const v = VARIANTS[variant];
@@ -35,6 +37,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
     'grainy',
     'text-sm font-semibold',
     'transition-colors duration-150',
+    disabled && 'opacity-50 cursor-not-allowed pointer-events-none',
     v.base,
     className,
   );
@@ -56,7 +59,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
   }
 
   return (
-    <button type={type} onClick={onClick} className={base}>
+    <button type={type} onClick={onClick} disabled={disabled} className={base}>
       {content}
     </button>
   );

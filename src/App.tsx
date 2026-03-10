@@ -1,5 +1,5 @@
 import Header from '@/components/Header.tsx';
-import Hero from '@/components/Hero.tsx';
+import Hero from '@/components/sections/Hero.tsx';
 import About from '@/components/sections/About.tsx';
 import Services from '@/components/sections/Services.tsx';
 import Directions from '@/components/sections/Directions.tsx';

@@ -65,6 +65,7 @@ const Select: FC<{ value: string; onChange: (v: string) => void }> = ({ value, o
 
 const Contact: FC = () => {
   const [service, setService] = useState('');
+  const [consent, setConsent] = useState(false);
 
   return (
     <section id="contact" className="py-24 px-4">
@@ -163,8 +164,38 @@ const Contact: FC = () => {
                 />
               </div>
 
+              {/* Consent checkbox */}
+              <label className="flex cursor-pointer items-center gap-3">
+                <div className="relative mt-0.5 shrink-0">
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={e => setConsent(e.target.checked)}
+                    className="sr-only"
+                    required
+                  />
+                  <div className={cn(
+                    'flex h-5 w-5 items-center justify-center rounded-md border-2 transition-colors duration-150',
+                    consent
+                      ? 'border-primary-500 bg-primary-500'
+                      : 'border-foreground/20 bg-background/80',
+                  )}>
+                    {consent && (
+                      <svg width="11" height="8" viewBox="0 0 11 8" fill="none">
+                        <path d="M1 4L4 7L10 1" stroke="white" strokeWidth="2" strokeLinecap="round"
+                              strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </div>
+                </div>
+                <span className="text-xs leading-relaxed text-foreground/45">
+                  Я даю согласие на обработку моих персональных данных
+                </span>
+              </label>
+
               <Button
                 type="submit"
+                disabled={!consent}
                 className="relative mt-2 flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-primary-500 px-6 py-3.5 text-sm font-semibold text-white grainy hover:bg-primary-600 transition-colors duration-150"
               >
                 <span className="relative z-10 flex items-center gap-2 text-white">
@@ -172,10 +203,6 @@ const Contact: FC = () => {
                   <ArrowUpRightIcon size={15} />
                 </span>
               </Button>
-
-              <p className="text-center text-xs text-foreground/30">
-                Нажимая «Отправить», вы соглашаетесь с обработкой персональных данных
-              </p>
             </form>
 
           </div>
