@@ -112,7 +112,7 @@ const CredentialCard: FC<Card> = ({ type, value, label, detail, text, icon, acce
 
 const About: FC = () => {
   return (
-    <section id="about" className="py-24 px-4">
+    <section id="about" className="min-h-screen py-32 px-4 flex flex-col justify-center">
       <div className="mx-auto max-w-[1280px]">
 
         {/* Header */}

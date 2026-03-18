@@ -75,10 +75,12 @@ const Header: FC = () => {
               <TelegramIcon size={20} />
             </Button>
             <button
-              className="md:hidden p-2 rounded-lg bg-foreground/5 transition-colors duration-150 hover:bg-foreground/10"
+              className="relative md:hidden p-2.5 rounded-xl bg-primary-500 grainy text-white! transition-colors duration-150 hover:bg-primary-600 active:bg-primary-600/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(0,0,0,0.25),0_2px_4px_rgba(0,0,0,0.15)]"
               aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
               onClick={() => setOpen(o => !o)}
             >
+              <span className="pointer-events-none absolute inset-[3px] rounded-lg border border-dashed border-white/40"
+                    aria-hidden />
               <AnimatePresence mode="wait" initial={false}>
                 {open ? (
                   <motion.span

@@ -69,7 +69,6 @@ const TelegramIcon: FC<{ size?: number }> = ({ size = 20 }) => (
 );
 
 const Contact: FC = () => {
-  const [service, setService] = useState('');
   const [consent, setConsent] = useState(false);
 
   return (
@@ -84,7 +83,7 @@ const Contact: FC = () => {
                 <SectionLabel>Контакты</SectionLabel>
                 <H2>
                   Давайте<br />
-                  познакомимся
+                  знакомиться
                 </H2>
                 <p className="mt-4 text-base text-foreground/60 leading-relaxed max-w-sm">
                   Оставьте заявку — я отвечу в течение дня. Сначала просто поговорим: расскажете, что происходит, я

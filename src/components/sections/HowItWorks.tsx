@@ -73,7 +73,7 @@ const Illustration: FC = () => (
 
 const HowItWorks: FC = () => {
   return (
-    <section id="how-it-works" className="py-24 px-4">
+    <section id="how-it-works" className="min-h-screen py-32 px-4 flex flex-col justify-center">
       <div className="mx-auto max-w-[1280px]">
 
         <SectionLabel>Как это работает</SectionLabel>

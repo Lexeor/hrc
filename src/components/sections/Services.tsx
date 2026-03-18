@@ -10,7 +10,7 @@ const SERVICES = [
     icon: FileTextIcon,
     title: 'Резюме, которое работает',
     description:
-      'Помогу сделать резюме, которое не теряется в стопке и привлекает внимание с первых секунд. Больше приглашений  меньше молчания в ответ.',
+      'Помогу сделать резюме, которое не теряется и привлекает внимание с первых секунд. ',
   },
   {
     icon: CompassIcon,
@@ -40,7 +40,8 @@ const SERVICES = [
 
 const Services: FC = () => {
   return (
-    <section id="services" className="relative overflow-hidden py-24 px-4 bg-primary-50/60 grainy">
+    <section id="services"
+             className="relative overflow-hidden min-h-screen py-32 px-4 bg-primary-50/60 grainy flex flex-col justify-center">
       <div className="relative z-10 mx-auto max-w-[1280px]">
 
         {/* Section header */}
@@ -61,10 +62,15 @@ const Services: FC = () => {
                   style: 'bg-white border border-white/20 justify-start',
                   node: (
                     <>
-                      <FloatingElement depth={30} className="text-xl font-medium text-black align-top w-full">
+                      <FloatingElement depth={30}
+                                       className="text-2xl font-medium text-black align-top w-full leading-tight">
                         {service.title}
                       </FloatingElement>
-                      <FloatingElement depth={60} className="absolute left-4 bottom-4">
+                      <FloatingElement depth={30}
+                                       className="mt-4 text-black/50 align-top w-full text-sm leading-snug">
+                        {service.description}
+                      </FloatingElement>
+                      <FloatingElement depth={60} className="absolute right-2 bottom-2">
                         <RefreshCwIcon size={64} strokeWidth={2.5} className="text-black opacity-10" />
                       </FloatingElement>
                     </>
@@ -75,10 +81,10 @@ const Services: FC = () => {
                   node: (
                     <>
                       <FloatingElement depth={30}
-                                       className="text-sm md:text-base leading-5 tracking-tight font-light text-white align-top w-full">
+                                       className="text-sm leading-snug tracking-tight font-light text-white align-top w-full">
                         {service.description}
                       </FloatingElement>
-                      <FloatingElement depth={60} className="absolute right-4 bottom-4">
+                      <FloatingElement depth={60} className="absolute left-2 bottom-2">
                         <RefreshCwIcon size={64} strokeWidth={2.5} className="text-white opacity-20" />
                       </FloatingElement>
                     </>

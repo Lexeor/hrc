@@ -35,7 +35,7 @@ const CtaTiltCard: FC = () => {
           </p>
         </FloatingElement>
         <FloatingElement depth={20}>
-          <p className="text-sm text-white/75 leading-relaxed">
+          <p className="text-sm text-white/75 leading-snug">
             Запишитесь на бесплатный 15-минутный разговор — вместе разберёмся, что нужно именно вам.
           </p>
         </FloatingElement>
