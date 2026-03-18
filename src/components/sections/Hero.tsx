@@ -45,14 +45,6 @@ const Hero: FC = () => {
           {/* Left: text content */}
           <div className="flex flex-col items-start gap-5 lg:pr-12">
 
-            {/* Badge */}
-            <motion.div {...fadeUp(0.05)}
-                        className="relative overflow-hidden rounded-full bg-primary-600/10 px-4 py-1.5 grainy">
-              <span className="relative z-10 text-xs font-semibold uppercase tracking-widest text-primary-700">
-                Карьерный консультант
-              </span>
-            </motion.div>
-
             {/* Headline */}
             <motion.h1
               {...fadeUp(0.12)}
@@ -119,23 +111,6 @@ const Hero: FC = () => {
           </motion.div>
 
         </div>
-
-        {/* Stats bar */}
-        <motion.div
-          className="z-20 mx-4 mb-4 overflow-hidden rounded-2xl bg-background/65 backdrop-blur-md lg:mx-0 lg:mb-0 lg:rounded-none"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.45 }}
-        >
-          <div className="grid grid-cols-2 divide-x divide-foreground/8 lg:grid-cols-4">
-            {STATS.map(stat => (
-              <div key={stat.value} className="flex flex-col items-center gap-1 px-6 py-5 text-center">
-                <span className="text-2xl font-black lg:text-3xl">{stat.value}</span>
-                <span className="text-xs text-foreground/50">{stat.label}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
 
     </section>
