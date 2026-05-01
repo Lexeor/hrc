@@ -7,34 +7,34 @@ import type { FC } from 'react';
 
 const SERVICES = [
   {
-    icon: FileTextIcon,
-    title: 'Резюме, которое работает',
+    icon: BriefcaseIcon,
+    title: 'Карьерные развилки и кейсы',
     description:
-      'Помогу сделать резюме, которое не теряется и привлекает внимание с первых секунд. ',
+      'Сменить сферу, получить повышение, разобраться в сложной рабочей ситуации — обсудим и найдём разумный выход вместе',
   },
   {
     icon: CompassIcon,
     title: 'Тактика поиска',
     description:
-      'Разберёмся, где искать, как откликаться и как выйти на нужные компании напрямую. Перестанем тыкать наугад — начнём действовать точно.',
+      'Разберёмся, где искать вакансии, как откликаться и выходить на нужные компании напрямую',
   },
   {
     icon: MicVocalIcon,
     title: 'Подготовка к собеседованию',
     description:
-      'Разберём типичные вопросы, проработаем ваши ответы, потренируемся вживую. Вы придёте не «на удачу», а подготовленным.',
+      'Разберём типичные вопросы, проработаем ваши ответы, потренируемся вживую, чтобы вы пришли на встречу подготовленным',
   },
   {
     icon: LifeBuoyIcon,
     title: 'Пакетное сопровождение',
     description:
-      'Резюме + 3 консультации + онлайн-поддержка.',
+      'Резюме + 3 консультации + онлайн-поддержка',
   },
   {
-    icon: BriefcaseIcon,
-    title: 'Карьерные развилки и кейсы',
+    icon: FileTextIcon,
+    title: 'Резюме, которое работает',
     description:
-      'Сменить сферу, попросить повышение, разобраться в сложной рабочей ситуации — обсудим и найдём разумный выход вместе.',
+      'Помогу сделать резюме, которое не теряется и привлекает внимание с первых секунд ',
   },
 ];
 
@@ -70,8 +70,8 @@ const Services: FC = () => {
                                        className="mt-4 text-black/50 align-top w-full text-sm leading-snug">
                         {service.description}
                       </FloatingElement>
-                      <FloatingElement depth={60} className="absolute right-2 bottom-2">
-                        <RefreshCwIcon size={64} strokeWidth={2.5} className="text-black opacity-10" />
+                      <FloatingElement depth={60} className="absolute right-4 bottom-4">
+                        <RefreshCwIcon size={48} strokeWidth={2.5} className="text-black opacity-10" />
                       </FloatingElement>
                     </>
                   ),
@@ -84,8 +84,8 @@ const Services: FC = () => {
                                        className="text-sm leading-snug tracking-tight font-light text-white align-top w-full">
                         {service.description}
                       </FloatingElement>
-                      <FloatingElement depth={60} className="absolute left-2 bottom-2">
-                        <RefreshCwIcon size={64} strokeWidth={2.5} className="text-white opacity-20" />
+                      <FloatingElement depth={60} className="absolute left-4 bottom-4">
+                        <RefreshCwIcon size={48} strokeWidth={2.5} className="text-white opacity-20" />
                       </FloatingElement>
                     </>
                   ),

@@ -1,6 +1,7 @@
 import H2 from '@/components/Typography/H2.tsx';
 import SectionLabel from '@/components/Typography/SectionLabel.tsx';
 import Button from '@/components/ui/Button.tsx';
+import { asset } from '@/lib/assets.ts';
 import { cn } from '@/lib/utils.ts';
 import { ArrowUpRightIcon, ChevronDownIcon } from 'lucide-react';
 import { type FC, useState } from 'react';
@@ -75,128 +76,123 @@ const Contact: FC = () => {
     <section id="contact" className="py-24 px-4">
       <div className="mx-auto max-w-[1280px]">
 
-        <div className="relative overflow-hidden rounded-3xl bg-primary-50/60 p-10 md:p-16 lg:p-20 grainy">
-          <div className="relative z-10 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20 items-stretch">
-            {/* Left — text + photo */}
-            <div className="flex flex-col gap-6 lg:self-stretch">
-              <div>
+        <div
+          className="relative overflow-hidden rounded-3xl bg-primary-50/60 grainy grid grid-cols-1 lg:grid-cols-2 items-stretch">
+          {/* Left — full-bleed photo */}
+          <div className="relative overflow-hidden min-h-[520px] lg:self-stretch">
+            <img
+              src={asset('images/footer-photo.jpg')}
+              alt="Тамара Шаврадзе"
+              className="absolute inset-0 w-full h-full object-cover object-top"
+            />
+            <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-black/60 to-transparent" />
+            <div className="relative z-10 flex flex-col justify-between h-full p-4 md:p-6 lg:p-8">
+              <div className="flex flex-col gap-1">
                 <SectionLabel>Контакты</SectionLabel>
                 <H2>
                   Давайте<br />
                   знакомиться
                 </H2>
-                <p className="mt-4 text-base text-foreground/60 leading-relaxed max-w-sm">
-                  Оставьте заявку — я отвечу в течение дня. Сначала просто поговорим: расскажете, что происходит, я
-                  скажу, чем могу помочь.
-                </p>
               </div>
+              <p className="text-base text-white/80 leading-relaxed max-w-sm">
+                Оставьте заявку — я отвечу в течение дня. Сначала просто поговорим: расскажете, что происходит, я
+                скажу, чем могу помочь.
+              </p>
+            </div>
+          </div>
 
-              {/* Photo placeholder */}
-              <div className="relative flex-1 overflow-hidden rounded-2xl bg-primary-100/70 grainy min-h-[200px]">
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-primary-400/50">
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="3" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <path d="M21 15l-5-5L5 21" />
-                  </svg>
-                  <span className="text-xs font-medium tracking-wide">Фото</span>
-                </div>
+          {/* Right — form */}
+          <form className="flex flex-col gap-4 p-4 md:p-6 lg:p-8" onSubmit={e => e.preventDefault()}>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-semibold text-foreground/50 uppercase tracking-wide">Как вас
+                  зовут?</label>
+                <input
+                  type="text"
+                  placeholder="Ваше имя"
+                  className="rounded-xl bg-background/80 px-4 py-3 text-sm shadow-xs placeholder:text-foreground/30 focus:shadow-sm focus:outline-none transition-shadow duration-150"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-semibold text-foreground/50 uppercase tracking-wide">Как
+                  связаться?</label>
+                <input
+                  type="text"
+                  placeholder="Telegram или телефон"
+                  className="rounded-xl bg-background/80 px-4 py-3 text-sm shadow-xs placeholder:text-foreground/30 focus:shadow-sm focus:outline-none transition-shadow duration-150"
+                />
               </div>
             </div>
 
-            {/* Right — form */}
-            <form className="flex flex-col gap-4" onSubmit={e => e.preventDefault()}>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-semibold text-foreground/50 uppercase tracking-wide">Как вас
-                    зовут?</label>
-                  <input
-                    type="text"
-                    placeholder="Ваше имя"
-                    className="rounded-xl bg-background/80 px-4 py-3 text-sm shadow-xs placeholder:text-foreground/30 focus:shadow-sm focus:outline-none transition-shadow duration-150"
-                  />
-                </div>
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-semibold text-foreground/50 uppercase tracking-wide">Как
-                    связаться?</label>
-                  <input
-                    type="text"
-                    placeholder="Telegram или телефон"
-                    className="rounded-xl bg-background/80 px-4 py-3 text-sm shadow-xs placeholder:text-foreground/30 focus:shadow-sm focus:outline-none transition-shadow duration-150"
-                  />
-                </div>
-              </div>
+            <div className="flex flex-col gap-1.5">
+              <label className="text-xs font-semibold text-foreground/50 uppercase tracking-wide">Расскажите чуть
+                подробнее</label>
+              <textarea
+                rows={4}
+                placeholder="Что сейчас происходит? Что хотите изменить?"
+                className="rounded-xl bg-background/80 px-4 py-3 text-sm shadow-xs placeholder:text-foreground/30 focus:shadow-sm focus:outline-none transition-shadow duration-150 resize-none"
+              />
+            </div>
 
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-foreground/50 uppercase tracking-wide">Расскажите чуть
-                  подробнее</label>
-                <textarea
-                  rows={4}
-                  placeholder="Что сейчас происходит? Что хотите изменить?"
-                  className="rounded-xl bg-background/80 px-4 py-3 text-sm shadow-xs placeholder:text-foreground/30 focus:shadow-sm focus:outline-none transition-shadow duration-150 resize-none"
+            {/* Consent checkbox */}
+            <label className="flex cursor-pointer items-center gap-3">
+              <div className="relative shrink-0">
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={e => setConsent(e.target.checked)}
+                  className="sr-only"
+                  required
                 />
-              </div>
-
-              {/* Consent checkbox */}
-              <label className="flex cursor-pointer items-center gap-3">
-                <div className="relative shrink-0">
-                  <input
-                    type="checkbox"
-                    checked={consent}
-                    onChange={e => setConsent(e.target.checked)}
-                    className="sr-only"
-                    required
-                  />
-                  <div className={cn(
-                    'flex h-5 w-5 items-center justify-center rounded-md border-2 transition-colors duration-150',
-                    consent ? 'border-primary-500 bg-primary-500' : 'border-foreground/20 bg-background/80',
-                  )}>
-                    {consent && (
-                      <svg width="11" height="8" viewBox="0 0 11 8" fill="none">
-                        <path d="M1 4L4 7L10 1" stroke="white" strokeWidth="2" strokeLinecap="round"
-                              strokeLinejoin="round" />
-                      </svg>
-                    )}
-                  </div>
+                <div className={cn(
+                  'flex h-5 w-5 items-center justify-center rounded-md border-2 transition-colors duration-150',
+                  consent ? 'border-primary-500 bg-primary-500' : 'border-foreground/20 bg-background/80',
+                )}>
+                  {consent && (
+                    <svg width="11" height="8" viewBox="0 0 11 8" fill="none">
+                      <path d="M1 4L4 7L10 1" stroke="white" strokeWidth="2" strokeLinecap="round"
+                            strokeLinejoin="round" />
+                    </svg>
+                  )}
                 </div>
-                <span className="text-xs leading-relaxed text-foreground/45">
+              </div>
+              <span className="text-xs leading-relaxed text-foreground/45">
                   Я даю согласие на обработку моих персональных данных
                 </span>
-              </label>
+            </label>
 
-              <Button
-                type="submit"
-                disabled={!consent}
-                className="relative mt-2 flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-primary-500 px-6 py-3.5 text-sm font-semibold text-white grainy hover:bg-primary-600 transition-colors duration-150"
-              >
+            <Button
+              type="submit"
+              disabled={!consent}
+              className="relative mt-2 flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-primary-500 px-6 py-3.5 text-sm font-semibold text-white grainy hover:bg-primary-600 transition-colors duration-150"
+            >
                 <span className="relative z-10 flex items-center gap-2 text-white">
                   Отправить заявку
                   <ArrowUpRightIcon size={15} />
                 </span>
-              </Button>
+            </Button>
 
-              {/* Divider */}
-              <div className="relative my-1 flex items-center gap-3">
-                <div className="h-px flex-1"
-                     style={{ background: 'linear-gradient(to right, transparent, rgba(28,41,24,0.15) 40%, rgba(28,41,24,0.15) 60%)' }} />
-                <span className="shrink-0 text-xs font-medium text-foreground/35">или</span>
-                <div className="h-px flex-1"
-                     style={{ background: 'linear-gradient(to left, transparent, rgba(28,41,24,0.15) 40%, rgba(28,41,24,0.15) 60%)' }} />
-              </div>
+            {/* Divider */}
+            <div className="relative my-1 flex items-center gap-3">
+              <div className="h-px flex-1"
+                   style={{ background: 'linear-gradient(to right, transparent, rgba(28,41,24,0.15) 40%, rgba(28,41,24,0.15) 60%)' }} />
+              <span className="shrink-0 text-xs font-medium text-foreground/35">или</span>
+              <div className="h-px flex-1"
+                   style={{ background: 'linear-gradient(to left, transparent, rgba(28,41,24,0.15) 40%, rgba(28,41,24,0.15) 60%)' }} />
+            </div>
 
-              {/* Telegram CTA */}
-              <Button
-                href="https://t.me/tamara_shavradze"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="justify-center text-md leading-none bg-[#229ED9] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15),inset_0_-1px_0_rgba(0,0,0,0.1)] hover:bg-[#1a8ec3] active:bg-[#167aab]"
-              >
-                <TelegramIcon size={18} />
-                Написать в Telegram
-              </Button>
-            </form>
+            {/* Telegram CTA */}
+            <Button
+              href="https://t.me/tamara_shavradze"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="justify-center text-md leading-none bg-[#229ED9] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15),inset_0_-1px_0_rgba(0,0,0,0.1)] hover:bg-[#1a8ec3] active:bg-[#167aab]"
+            >
+              <TelegramIcon size={18} />
+              Написать в Telegram
+            </Button>
+          </form>
 
-          </div>
         </div>
 
       </div>
