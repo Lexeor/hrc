@@ -11,7 +11,6 @@ const AUDIENCES = [
     subtitle: 'Даже если вы ещё ни разу не делали резюме',
     description:
       'Вы только начинаете — и это нормально. Вместе разберёмся, как правильно оформить опыт, что написать, если его почти нет, и как произвести нужное впечатление с первых шагов.',
-    tags: ['Первое резюме', 'Стажировки', 'Старт карьеры'],
     cardBg: 'bg-background',
     numColor: 'text-primary-300/70',
   },
@@ -21,7 +20,6 @@ const AUDIENCES = [
     subtitle: 'Вне зависимости от уровня опыта',
     description:
       'Хотите сменить компанию, направление или формат работы — помогу переупаковать ваш опыт, найти сильные стороны и выйти на рынок уверенно.',
-    tags: ['Смена компании', 'Карьерный рост'],
     cardBg: 'bg-primary-50/60',
     numColor: 'text-primary-400/75',
   },
@@ -31,7 +29,6 @@ const AUDIENCES = [
     subtitle: 'Производство, бэк-офис и другие',
     description:
       'На управленческом уровне рынок другой — и требования другие. Знаю, как позиционировать управленческий опыт и находить возможности, которых не видно снаружи.',
-    tags: ['Управление командой', 'Переговоры'],
     cardBg: 'bg-primary-100/50',
     numColor: 'text-primary-500/75',
   },
@@ -80,9 +77,9 @@ const Directions: FC = () => {
              className="relative overflow-hidden min-h-screen py-32 px-4 bg-primary-50/60 grainy flex flex-col justify-center">
       <div className="relative z-10 mx-auto max-w-[1280px]">
 
-        <SectionLabel>Направления</SectionLabel>
+        <SectionLabel>Сцепиализация</SectionLabel>
         <div className="mb-14 flex flex-col gap-0 md:flex-row md:items-end md:justify-between">
-          <H2>Кому я могу помочь эффективнее</H2>
+          <H2>Мои основные клиенты</H2>
         </div>
 
         {/* Audience cards */}
@@ -109,18 +106,6 @@ const Directions: FC = () => {
                 <p className="text-sm text-foreground/55 leading-relaxed">
                   {audience.description}
                 </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mt-auto pt-1">
-                  {audience.tags.map(tag => (
-                    <span
-                      key={tag}
-                      className="inline-flex items-center rounded-full bg-primary-100/80 px-3 py-1 text-xs font-medium text-primary-700/80"
-                    >
-                        {tag}
-                      </span>
-                  ))}
-                </div>
               </TiltCard>
             </motion.div>
           ))}

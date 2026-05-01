@@ -79,25 +79,27 @@ const Contact: FC = () => {
         <div
           className="relative overflow-hidden rounded-3xl bg-primary-50/60 grainy grid grid-cols-1 lg:grid-cols-2 items-stretch">
           {/* Left — full-bleed photo */}
-          <div className="relative overflow-hidden min-h-[520px] lg:self-stretch">
-            <img
-              src={asset('images/footer-photo.jpg')}
-              alt="Тамара Шаврадзе"
-              className="absolute inset-0 w-full h-full object-cover object-top"
-            />
-            <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-black/60 to-transparent" />
-            <div className="relative z-10 flex flex-col justify-between h-full p-4 md:p-6 lg:p-8">
-              <div className="flex flex-col gap-1">
-                <SectionLabel>Контакты</SectionLabel>
-                <H2>
-                  Давайте<br />
-                  знакомиться
-                </H2>
+          <div className="relative p-3">
+            <div className="relative overflow-hidden rounded-2xl w-full aspect-[3/4]">
+              <img
+                src={asset('images/footer-photo.webp')}
+                alt="Тамара Шаврадзе"
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
+              <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="relative z-10 flex flex-col justify-between h-full p-4 md:p-6 lg:p-8">
+                <div className="flex flex-col gap-1">
+                  <SectionLabel className="text-white/70">Контакты</SectionLabel>
+                  <H2 className="text-white">
+                    Давайте<br />
+                    знакомиться
+                  </H2>
+                </div>
+                <p className="text-base text-white/80 leading-relaxed max-w-sm">
+                  Оставьте заявку — я отвечу в течение дня. Сначала просто поговорим: расскажете, что происходит, я
+                  скажу, чем могу помочь.
+                </p>
               </div>
-              <p className="text-base text-white/80 leading-relaxed max-w-sm">
-                Оставьте заявку — я отвечу в течение дня. Сначала просто поговорим: расскажете, что происходит, я
-                скажу, чем могу помочь.
-              </p>
             </div>
           </div>
 
